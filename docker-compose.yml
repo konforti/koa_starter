@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    nginx:
+        restart: always
+        build: ./nginx
+        image: registry.gitlab.com/koa_starter/koa_starter:nginx
+        links:
+            - node:node
+        ports:
+            - 80:80
+            - 5000:5000
+
+    node:
+        restart: always
+        build: .
+        image: registry.gitlab.com/koa_starter/koa_starter:node
+        command: pm2 start pm2.process.json --no-daemon
+        ports:
+            - 3000:3000
+        env_file:
+            - ./.env

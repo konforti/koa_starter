@@ -1,0 +1,30 @@
+{
+  "apps": [
+    {
+      "name": "Koa Starter",
+      "script": "index.js",
+      "env": {
+        "COMMON_VARIABLE": "true"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "node",
+      "host": [
+        "IP_HOST"
+      ],
+      "ref": "origin/master",
+      "repo": "git@gitlab.com:koa_starter/koa_starter.git",
+      "path": "/home/node/www ",
+      "pre-deploy-local": "echo 'This is a local executed command'",
+      "post-deploy": "npm install && pm2 startOrRestart pm2.process.json --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}

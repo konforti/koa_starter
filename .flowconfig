@@ -1,0 +1,10 @@
+[ignore]
+.*/public/*
+.*/node_modules/license-checker/tests/config/custom_format_broken.json
+
+[include]
+server
+
+[libs]
+
+[options]

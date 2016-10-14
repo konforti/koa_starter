@@ -1,0 +1,12 @@
+{
+  "name": "Koa Starter API",
+  "version": "0.0.0",
+  "description": "Api documentation for koa_starter",
+  "title": "Api documentation for koa_starter",
+  "url" : "https://api.koa_starter.com",
+  "sampleUrl": "https://api.koa_starter.com",
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
